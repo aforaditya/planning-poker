@@ -1,26 +1,17 @@
-<div class="flex flex-col items-center relative gap-5">
-  <div
-    class="flex justify-center items-end gap-[2%] w-full absolute"
-    style="--arc-height: 100px"
-  >
-    <app-card class="relative top-[var(--arc-height)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.85)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.7)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.55)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.4)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.25)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.1)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*-0.05)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.1)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.25)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.4)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.55)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.7)]" />
-    <app-card class="relative top-[calc(var(--arc-height)*0.85)]" />
-    <app-card class="relative top-[var(--arc-height)]" />
+<div
+  class="flex flex-col items-center relative gap-5 w-full h-[30vh] bg-cover bg-no-repeat overflow-hidden"
+>
+  <div class="flex justify-center items-end gap-[2%] w-full absolute top-0">
+    <app-card
+      *ngFor="let value of deckSequence; let i = index"
+      [value]="value"
+      [color]="colors[i % colors.length]"
+      class="relative"
+      [style.top]="getCardPosition(i)"
+    />
   </div>
 
-  <div class="z-20 absolute top-[160px]">
+  <div class="z-20 absolute top-[140px]">
     <div
       class="flex items-center justify-center p-5 gap-5 border border-gray-200 rounded-lg bg-gray-50"
     >
@@ -45,5 +36,8 @@
       <p>Waiting for host to start</p>
     </div>
   </div>
-  <img class="w-full relative -z-10 top-10" src="/images/ellipse.svg" />
+
+  <div class="w-full absolute -z-10 top-10">
+    <img src="/images/ellipse.svg" class="w-full"/>
+  </div>
 </div>

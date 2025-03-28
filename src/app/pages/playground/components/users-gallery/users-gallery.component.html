@@ -1,28 +1,7 @@
 <div class="p-20 px-28">
-    <div class="grid grid-cols-12 gap-3">
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />    
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />        
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-        <app-user-card />
-    </div>
+  <div class="grid grid-cols-12 gap-3">
+    @for (user of users; track user.userId) {
+        <app-user-card [user]="user"/>
+    }
+  </div>
 </div>
