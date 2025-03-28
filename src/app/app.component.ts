@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'planning-poker';
 
   constructor(private authService: AuthService){
-
+        
   }
 
   ngOnInit(){
