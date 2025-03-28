@@ -2,15 +2,14 @@ import {
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
-  HttpParams,
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
-import { exhaustMap, take } from 'rxjs/operators';
 
-@Injectable()
+
+@Injectable({providedIn: 'root'})
 export class AuthInterceptorService implements HttpInterceptor {
   private token: string | null = null;
 
